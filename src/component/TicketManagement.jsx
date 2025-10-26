@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { Footer } from "./FOoter";
+import { Edit2, Plus, Trash2 } from "lucide-react";
+import { Toast } from "./Toast";
 
 export const TicketManagement = ({ setCurrentPath }) => {
   const [tickets, setTickets] = useState([]);

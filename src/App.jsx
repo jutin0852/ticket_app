@@ -6,7 +6,7 @@ import { useAuth } from "./hooks/useAuth";
 import { Router } from "./component/Router";
 export default function App() {
   const [currentPath, setCurrentPath] = useState("/");
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated, logout } = useAuth(currentPath);
 
   // Initialize demo user
   useEffect(() => {
@@ -27,12 +27,14 @@ export default function App() {
   };
 
   // Protected routes check
-  useEffect(() => {
-    const protectedRoutes = ["/dashboard", "/tickets"];
-    if (protectedRoutes.includes(currentPath) && !isAuthenticated) {
-      setCurrentPath("/auth/login");
-    }
-  }, [currentPath, isAuthenticated]);
+ useEffect(() => {
+   const protectedRoutes = ["/dashboard", "/tickets"];
+   const session = localStorage.getItem("ticketapp_session");
+
+   if (protectedRoutes.includes(currentPath) && !session) {
+     setCurrentPath("/auth/login");
+   }
+ }, [currentPath]);
 
   return (
     <div className="min-h-screen flex flex-col">

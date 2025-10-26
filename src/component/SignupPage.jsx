@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Footer } from "./FOoter";
+import { Toast } from "./Toast";
 
 export const SignupPage = ({ setCurrentPath }) => {
   const [formData, setFormData] = useState({
@@ -100,7 +102,7 @@ export const SignupPage = ({ setCurrentPath }) => {
                   value={formData.name}
                   onChange={(e) => handleChange("name", e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                  placeholder="John Doe"
+                  placeholder="Jutin "
                 />
                 {errors.name && (
                   <p className="text-red-500 text-sm mt-1">{errors.name}</p>
@@ -120,7 +122,7 @@ export const SignupPage = ({ setCurrentPath }) => {
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                  placeholder="you@example.com"
+                  placeholder="yourname@gmail.com"
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm mt-1">{errors.email}</p>

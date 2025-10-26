@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Footer } from "./FOoter";
+import { Toast } from "./Toast";
 
 // Login Page
 export const LoginPage = ({ setCurrentPath }) => {

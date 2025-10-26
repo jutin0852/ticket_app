@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Footer } from "./FOoter";
+import { Eye, Plus } from "lucide-react";
 
 export const Dashboard = ({ setCurrentPath }) => {
   const [tickets, setTickets] = useState([]);

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Footer } from "./FOoter";
+import { Footer } from "./Footer";
 import { Eye, Plus } from "lucide-react";
 
 export const Dashboard = ({ setCurrentPath }) => {
@@ -28,6 +28,28 @@ export const Dashboard = ({ setCurrentPath }) => {
     in_progress: tickets.filter((t) => t.status === "in_progress").length,
     closed: tickets.filter((t) => t.status === "closed").length,
   };
+  const overView = [
+    {
+      label: "Total Tickets",
+      value: stats.total,
+      color: "from-blue-500 to-blue-600",
+    },
+    {
+      label: "Open Tickets",
+      value: stats.open,
+      color: "from-green-500 to-green-600",
+    },
+    {
+      label: "In Progress",
+      value: stats.in_progress,
+      color: "from-yellow-300 to-yellow-400",
+    },
+    {
+      label: "Resolved",
+      value: stats.closed,
+      color: "from-gray-500 to-gray-600",
+    },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -41,28 +63,7 @@ export const Dashboard = ({ setCurrentPath }) => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {[
-              {
-                label: "Total Tickets",
-                value: stats.total,
-                color: "from-blue-500 to-blue-600",
-              },
-              {
-                label: "Open Tickets",
-                value: stats.open,
-                color: "from-green-500 to-green-600",
-              },
-              {
-                label: "In Progress",
-                value: stats.in_progress,
-                color: "from-amber-500 to-amber-600",
-              },
-              {
-                label: "Resolved",
-                value: stats.closed,
-                color: "from-gray-500 to-gray-600",
-              },
-            ].map((stat, index) => (
+            {overView.map((stat, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
                 <div
                   className={`w-12 h-12 bg-linear-to-br ${stat.color} rounded-lg flex items-center justify-center text-white font-bold text-xl mb-4`}
@@ -83,7 +84,7 @@ export const Dashboard = ({ setCurrentPath }) => {
             <div className="grid md:grid-cols-2 gap-4">
               <button
                 onClick={() => setCurrentPath("/tickets")}
-                className="flex items-center justify-center gap-3 px-6 py-4 bg-linear-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="flex items-center justify-center gap-3 px-6 py-4 bg-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
               >
                 <Plus size={20} />
                 Create New Ticket
@@ -104,3 +105,4 @@ export const Dashboard = ({ setCurrentPath }) => {
     </div>
   );
 };
+

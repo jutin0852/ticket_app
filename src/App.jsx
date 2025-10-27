@@ -11,11 +11,11 @@ export default function App() {
   // Initialize demo user
   useEffect(() => {
     const users = JSON.parse(localStorage.getItem("ticketapp_users") || "[]");
-    if (!users.find((u) => u.email === "demo@example.com")) {
+    if (!users.find((u) => u.email === "hng@gmail.com")) {
       users.push({
         name: "Demo User",
-        email: "demo@example.com",
-        password: "demo123",
+        email: "hng@gmail.com",
+        password: "hng123",
       });
       localStorage.setItem("ticketapp_users", JSON.stringify(users));
     }

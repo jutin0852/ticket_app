@@ -175,7 +175,7 @@ export const SignupPage = ({ setCurrentPath }) => {
 
               <button
                 type="submit"
-                className="w-full py-3 bg-linear-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="w-full py-3 bg-purple-600  text-white rounded-lg font-semibold hover:shadow-lg transition-all"
               >
                 Create Account
               </button>

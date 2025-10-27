@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Footer } from "./FOoter";
+import { Footer } from "./Footer";
 import { Edit2, Plus, Trash2 } from "lucide-react";
 import { Toast } from "./Toast";
 

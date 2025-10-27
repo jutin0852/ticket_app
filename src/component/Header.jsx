@@ -13,7 +13,7 @@ export const Header = ({ isAuthenticated, onLogout, setCurrentPath }) => {
             onClick={() => setCurrentPath("/")}
           >
             <span className="text-2xl font-bold bg-purple-600 bg-clip-text text-transparent">
-              TicketFlow
+              TicketApp
             </span>
           </div>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Footer } from "./FOoter";
 import { Toast } from "./Toast";
+import { Footer } from "./Footer";
 
 // Login Page
 export const LoginPage = ({ setCurrentPath }) => {
@@ -120,7 +120,7 @@ export const LoginPage = ({ setCurrentPath }) => {
 
               <button
                 type="submit"
-                className="w-full py-3 bg-linear-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="w-full py-3 bg-purple-600  text-white rounded-lg font-semibold hover:shadow-lg transition-all"
               >
                 Sign In
               </button>
@@ -142,8 +142,8 @@ export const LoginPage = ({ setCurrentPath }) => {
               <p className="text-sm text-blue-800 font-medium mb-2">
                 Demo Credentials:
               </p>
-              <p className="text-xs text-blue-700">Email: demo@example.com</p>
-              <p className="text-xs text-blue-700">Password: demo123</p>
+              <p className="text-xs text-blue-700">Email: hng@gmail.com</p>
+              <p className="text-xs text-blue-700">Password: hng123</p>
             </div>
           </div>
         </div>

@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Header } from "./component/Header";
-import { LandingPage } from "./component/LandingPage";
 import { useAuth } from "./hooks/useAuth";
 import { Router } from "./component/Router";
 export default function App() {
   const [currentPath, setCurrentPath] = useState("/");
   const { isAuthenticated, logout } = useAuth(currentPath);
 
-  // Initialize demo user
   useEffect(() => {
     const users = JSON.parse(localStorage.getItem("ticketapp_users") || "[]");
     if (!users.find((u) => u.email === "hng@gmail.com")) {
@@ -26,7 +24,6 @@ export default function App() {
     setCurrentPath("/");
   };
 
-  // Protected routes check
  useEffect(() => {
    const protectedRoutes = ["/dashboard", "/tickets"];
    const session = localStorage.getItem("ticketapp_session");

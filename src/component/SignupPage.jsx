@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Footer } from "./FOoter";
+import { Footer } from "./Footer";
 import { Toast } from "./Toast";
 
 export const SignupPage = ({ setCurrentPath }) => {

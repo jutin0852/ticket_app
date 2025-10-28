@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Toast } from "./Toast";
 import { Footer } from "./Footer";
 
-// Login Page
 export const LoginPage = ({ setCurrentPath }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
